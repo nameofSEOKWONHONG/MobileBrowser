@@ -21,11 +21,17 @@ namespace App1
     public sealed partial class MainWindow : Window
     {
         public MainWindow()
-        {
+        {   
             this.InitializeComponent();
             // C# code to set AppTitleBar uielement as titlebar            
             this.ExtendsContentIntoTitleBar = true;  // enable custom titlebar
-            this.SetTitleBar(AppTitleBar);      // set user ui element as titlebar            
+            this.SetTitleBar(AppTitleBar);      // set user ui element as titlebar
+            this.SizeChanged += MainWindow_SizeChanged;
+        }
+
+        private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs args)
+        {
+            throw new System.NotImplementedException();
         }
     }
 
