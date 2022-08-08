@@ -1,25 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
-using SettingsUI.Helpers;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using WinRT;
-using Microsoft.UI.Xaml;
-using Windows.ApplicationModel;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -32,8 +14,8 @@ namespace App1
     /// </summary>
     public partial class App : Application
     {
-        private readonly int _width = 400;
-        private readonly int _height = 780;
+        private readonly int _width = 420;
+        private readonly int _height = 820;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -54,7 +36,7 @@ namespace App1
             m_window = new MainWindow();
             var windowNative = m_window.As<IWindowNative>();
             m_windowHandle = windowNative.WindowHandle;            
-            m_window.Activate();
+            m_window.Activate();            
             SetWindowSize(m_windowHandle, _width, _height);
             //WindowHelper.RegisterWindowMinMax(m_window);            
             //WindowHelper.MinWindowWidth = _width;

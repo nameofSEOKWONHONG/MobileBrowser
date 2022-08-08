@@ -17,7 +17,7 @@
             </Border>
         </StackPanel>
         <Grid Grid.Row="1">
-            <local:Page1></local:Page1>
+            <local:MobileBrowserPage></local:MobileBrowserPage>
         </Grid>
     </Grid>
 

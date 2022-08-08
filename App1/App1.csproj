@@ -10,9 +10,10 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Page1.xaml" />
+    <None Remove="MobileBrowserPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +41,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Page1.xaml">
+    <Page Update="MobileBrowserPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
