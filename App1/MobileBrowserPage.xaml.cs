@@ -15,9 +15,10 @@ namespace App1
         private readonly MobileBrowserViewModel _viewModel;
 
         public MobileBrowserPage()
-        {            
+        {
             this.InitializeComponent();
             _viewModel = new MobileBrowserViewModel();
+
             this.DataContext = _viewModel;
             this.webView.Loaded += async (s, e) =>
             {
@@ -28,17 +29,18 @@ namespace App1
                 settings.AreDefaultContextMenusEnabled = true;
                 settings.AreDevToolsEnabled = true;
                 settings.IsScriptEnabled = true;
+                settings.UserAgent = AgentConst.MOBILE_AGENT;
 
                 this.webView.CoreWebView2.SourceChanged += _viewModel.SourceChanged;
                 this.webView.CoreWebView2.NavigationStarting += _viewModel.NavigationStarting;
                 this.SearchUrl.KeyUp += (s, e) =>
                 {
-                    if(e.Key == Windows.System.VirtualKey.Enter)
+                    if (e.Key == Windows.System.VirtualKey.Enter)
                     {
                         this._viewModel.SearchCommand.Execute(this.webView);
                     }
                 };
-            };            
+            };
         }
 
         //private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -51,6 +53,4 @@ namespace App1
         //    AnimatedIcon.SetState(this.SearchAnimatedIcon, "Normal");
         //}
     }
-
-
 }

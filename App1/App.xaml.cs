@@ -35,7 +35,8 @@ namespace App1
         {
             m_window = new MainWindow();
             var windowNative = m_window.As<IWindowNative>();
-            m_windowHandle = windowNative.WindowHandle;            
+            m_windowHandle = windowNative.WindowHandle;
+            AppNativeInfo.Instance.MainWindowHandle = m_windowHandle;
             m_window.Activate();            
             SetWindowSize(m_windowHandle, _width, _height);
             //WindowHelper.RegisterWindowMinMax(m_window);            
@@ -69,5 +70,14 @@ namespace App1
         {
             IntPtr WindowHandle { get; }
         }
+    }
+
+    public class AppNativeInfo
+    {
+        public static AppNativeInfo Instance => _instance.Value;
+        private static Lazy<AppNativeInfo> _instance = new Lazy<AppNativeInfo>(() => new AppNativeInfo());
+
+        public IntPtr MainWindowHandle { get; set; }
+        private AppNativeInfo() { }
     }
 }

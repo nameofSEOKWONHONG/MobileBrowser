@@ -31,7 +31,7 @@ namespace App1
 
         private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs args)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 
